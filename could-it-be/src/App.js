@@ -1,5 +1,5 @@
 import './App.css';
-import Logo from './components/Logo.js'
+import Logo from './components/Logo'
 import Quiz from './components/Quiz';
 
 
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Logo />
       <Quiz />
-   
+
 
 
 
