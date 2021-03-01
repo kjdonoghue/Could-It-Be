@@ -19,14 +19,14 @@ const useStyles = makeStyles((theme) => ({
 function QuestionOne(props) {
     const classes = useStyles();
 
-    const [value, setValue] = React.useState('status');
+    const [value, setValue] = React.useState('no');
 
     const handleChange = (event) => {
         setValue(event.target.value);
     };
 
     const handleNext = (value) => {
-        props.onUpdatePurpose(value)
+        props.onUpdateTraining(value)
         props.onIncrementSteps()
         console.log(value)
 
@@ -35,15 +35,12 @@ function QuestionOne(props) {
 
     return (
         <div >
-            <h3>What is the purpose of your meeting?</h3>
+            <h3>Is this training mandated by the state or federal government, human resources or corporation?</h3>
 
             <FormControl component="fieldset">
                 <RadioGroup aria-label="options" name="options" value={value} onChange={handleChange}>
-                    <FormControlLabel value="status" control={<Radio />} label="Status Update" />
-                    <FormControlLabel value="share" control={<Radio />} label="Share New Information" />
-                    <FormControlLabel value="decision" control={<Radio />} label="Make a Decision" />
-                    <FormControlLabel value="training" control={<Radio />} label="Training Session" />
-                    <FormControlLabel value="teambuilding" control={<Radio />} label="Team Building" />
+                    <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+                    <FormControlLabel value="no" control={<Radio />} label="No" />
                 </RadioGroup>
             </FormControl>
 

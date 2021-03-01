@@ -1,6 +1,7 @@
 const initalState = {
    step: 0,
    purpose: 0,
+   complexity: 0,
 
 }
 
@@ -18,6 +19,10 @@ const reducer = (state = initalState, action) => {
     } else if(action.type == "ON_UPDATE_PURPOSE") {
         return{...state,
             purpose: action.payload
+        }
+    } else if(action.type == "ON_UPDATE_COMPLEXITY") {
+        return{...state,
+            complexity: action.payload
         }
     }
     
