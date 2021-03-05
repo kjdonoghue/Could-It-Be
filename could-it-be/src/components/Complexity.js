@@ -35,11 +35,11 @@ function Complexity(props) {
 
     return (
         <div >
-            <h3>1.On a scale of 1-10, how complex is the topic?</h3>
+            <h3>On a scale of 1 (Simple) to 10 (Mind-Boggling), how complex is the topic?</h3>
 
             <FormControl component="fieldset">
                 <RadioGroup row aria-label="options" name="options" value={value} onChange={handleChange}>
-                    <FormControlLabel value="1" control={<Radio />} label="1 (Simple)" />
+                    <FormControlLabel value="1" control={<Radio />} label="1" />
                     <FormControlLabel value="2" control={<Radio />} label="2" />
                     <FormControlLabel value="3" control={<Radio />} label="3" />
                     <FormControlLabel value="4" control={<Radio />} label="4" />
@@ -48,7 +48,7 @@ function Complexity(props) {
                     <FormControlLabel value="7" control={<Radio />} label="7" />
                     <FormControlLabel value="8" control={<Radio />} label="8" />
                     <FormControlLabel value="9" control={<Radio />} label="9" />
-                    <FormControlLabel value="10" control={<Radio />} label="10 (Mind-Boggling)" />
+                    <FormControlLabel value="10" control={<Radio />} label="10" />
                 </RadioGroup>
             </FormControl>
 

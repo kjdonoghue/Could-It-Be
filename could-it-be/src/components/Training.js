@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import Complexity from './Complexity';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 function QuestionOne(props) {
     const classes = useStyles();
 
-    const [value, setValue] = React.useState('no');
+    const [value, setValue] = React.useState('');
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -35,8 +36,9 @@ function QuestionOne(props) {
 
     return (
         <div >
-            <h3>Is this training mandated by the state or federal government, human resources or corporation?</h3>
-
+            {value == '' ?  <div> 
+                <h3>Is this training mandated by the state or federal government, human resources or corporation?</h3>
+           
             <FormControl component="fieldset">
                 <RadioGroup aria-label="options" name="options" value={value} onChange={handleChange}>
                     <FormControlLabel value="yes" control={<Radio />} label="Yes" />
@@ -46,8 +48,11 @@ function QuestionOne(props) {
 
             <div className={classes.root}>
                 <Button variant="contained" onClick={() => handleNext(value)}>Next</Button>
-            </div>
+            </div> 
+            </div> : null}
 
+            {value == 'yes' ? <h1>Training</h1> : null }
+            {value == 'no' ? <Complexity /> : null }
 
         </div>
     );
